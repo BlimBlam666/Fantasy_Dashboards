@@ -1,7 +1,7 @@
 export const DOCTRINE_KEYS = Object.freeze(["body", "craft", "mind", "character", "fellowship"]);
 
 export const DEFAULT_RESOURCES = Object.freeze([
-  { id: "academy-drive", name: "Academy Drive", url: "https://drive.google.com/drive/folders/1ZCjtQF8rzy37uZpsFJsVTqD_C6YrSV0K", kind: "Archive", glyph: "book", platform: "drive" },
+  { id: "academy-drive", name: "Guild Drive", url: "https://drive.google.com/drive/folders/1ZCjtQF8rzy37uZpsFJsVTqD_C6YrSV0K", kind: "Archive", glyph: "book", platform: "drive" },
   { id: "fighter-coach", name: "Fighter Coach", url: "https://blimblam666.github.io/foam-fighting-mobile-coach/", kind: "Training", glyph: "sword", platform: "coach" },
   { id: "f100-courses", name: "F100 Courses", url: "https://drive.google.com/drive/folders/1Ycxt3eS_C6mU2CHCjaTIeh0FhslAJvVG", kind: "Courses", glyph: "scroll", platform: "drive" },
   { id: "core-admin", name: "Core & Admin", url: "https://drive.google.com/drive/folders/1kr7jlmCjDXzgNSz5cc9N-uxLmJESwxd3", kind: "Administration", glyph: "tower", platform: "drive" },
@@ -17,7 +17,7 @@ export const DEFAULT_RESOURCES = Object.freeze([
 
 export const DEFAULT_PREFERENCES = Object.freeze({
   operatorName: "BlimBlam",
-  hallTitle: "Academy Command Hall",
+  hallTitle: "Guild Command Hall",
   rank: "Preceptor",
   accent: "gold",
   motion: "auto",
@@ -29,7 +29,7 @@ export const DEFAULT_PREFERENCES = Object.freeze({
 });
 
 export const DEFAULT_RHYTHM = Object.freeze({
-  training: { enabled: true, weekday: 3, time: "19:00", duration: 120, title: "Academy Training", location: "Training Yard" },
+  training: { enabled: true, weekday: 3, time: "19:00", duration: 120, title: "Guild Training", location: "Training Yard" },
   park: { enabled: true, weekday: 0, time: "12:00", duration: 240, title: "Obsidian Gate Park", location: "Obsidian Gate" }
 });
 
@@ -56,7 +56,7 @@ export const SIGNALS = Object.freeze([
   "Measure first. Choose well. Act without waste.",
   "Skill grows fastest where reflection follows effort.",
   "Teach the reason, demonstrate the action, test the result.",
-  "The Academy creates future leaders, not permanent followers.",
+  "The Guild creates future leaders, not permanent followers.",
   "Body, Craft, Mind, Character, and Fellowship rise together.",
   "A safe fighter can train tomorrow. A wise fighter ensures others can too.",
   "The useful lesson is the one a cadet can carry onto the field.",
@@ -81,7 +81,7 @@ export const SIGNALS = Object.freeze([
   "Train the weakness without forgetting the strength.",
   "The Chronicle preserves lessons that pride would otherwise erase.",
   "Be safe, honest, teachable, useful, and reflective.",
-  "The Academy is the gate. Amtgard is the world beyond it.",
+  "The Guild is the gate. Amtgard is the world beyond it.",
   "Choose one mission for this session and finish it well.",
   "Practice reveals character; fellowship gives it purpose.",
   "Forge skill. Build character. Raise Warlords."
@@ -229,7 +229,7 @@ export function normalizeEvent(event) {
     id: cleanText(event.id, 120) || makeId("event"), title, startsAt,
     endsAt: Number.isFinite(Number(event.endsAt)) ? Number(event.endsAt) : null,
     location: cleanText(event.location, 100),
-    kind: cleanText(event.kind, 30) || "Academy",
+    kind: cleanText(event.kind, 30) || "Guild",
     source: ["manual", "ics"].includes(event.source) ? event.source : "manual"
   };
 }
@@ -469,3 +469,4 @@ function clampNumber(value, minimum, maximum, fallback) {
   if (!Number.isFinite(number)) return fallback;
   return Math.min(maximum, Math.max(minimum, number));
 }
+

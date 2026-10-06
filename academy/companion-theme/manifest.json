@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Academy of Mercenary Arts — Obsidian & Gold Theme",
-  "short_name": "Academy Theme",
-  "description": "An optional obsidian, crimson, and heraldic-gold Chrome frame for the Academy Command Hall.",
+  "name": "Obsidian Gate Guild of Mercenaries — Obsidian & Gold Theme",
+  "short_name": "Guild Theme",
+  "description": "An optional obsidian, crimson, and heraldic-gold Chrome frame for the Guild Command Hall.",
   "version": "1.0.0",
   "theme": {
     "colors": {
@@ -14,3 +14,4 @@
     "properties": {"ntp_logo_alternate": 1}
   }
 }
+

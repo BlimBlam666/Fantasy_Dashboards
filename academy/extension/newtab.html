@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="dark">
-    <title>Academy Command Hall</title>
+    <title>Guild Command Hall</title>
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/newtab.css">
   </head>
@@ -18,8 +18,8 @@
       <img class="academy-crest" src="assets/academy-crest.svg" alt="">
       <div class="academy-identity">
         <span class="eyebrow">OBSIDIAN GATE // KINGDOM OF DRAGONSPINE</span>
-        <h1>ACADEMY OF MERCENARY ARTS</h1>
-        <p>Developing Fighters. Building Warlords.</p>
+        <h1>OBSIDIAN GATE GUILD OF MERCENARIES</h1>
+        <p>Learn Together. Play Better.</p>
       </div>
       <div class="operator-seal">
         <span id="operator-rank">PRECEPTOR</span>
@@ -50,9 +50,9 @@
 
       <section class="directive-banner" aria-labelledby="directive-heading">
         <div class="banner-finial" aria-hidden="true">◆</div>
-        <div class="directive-heading"><span class="kicker">COMMANDER’S INTENT</span><h2 id="directive-heading">What must the Academy accomplish today?</h2></div>
-        <label class="visually-hidden" for="directive-input">Today’s Academy priority</label>
-        <input id="directive-input" maxlength="220" autocomplete="off" placeholder="Name the one Academy outcome that matters most today…">
+        <div class="directive-heading"><span class="kicker">COMMANDER’S INTENT</span><h2 id="directive-heading">What must the Guild accomplish today?</h2></div>
+        <label class="visually-hidden" for="directive-input">Today’s Guild priority</label>
+        <input id="directive-input" maxlength="220" autocomplete="off" placeholder="Name the one Guild outcome that matters most today…">
         <span id="directive-status" class="save-status" role="status" aria-live="polite"></span>
       </section>
 
@@ -60,8 +60,8 @@
         <div class="command-column left-column">
           <section class="hall-panel schedule-panel" aria-labelledby="schedule-heading">
             <div class="panel-heading">
-              <div><span class="kicker">ACADEMY RHYTHM</span><h2 id="schedule-heading">COMING UP</h2></div>
-              <button id="add-event" class="round-button" type="button" title="Add an Academy event" aria-label="Add an Academy event">+</button>
+              <div><span class="kicker">GUILD RHYTHM</span><h2 id="schedule-heading">COMING UP</h2></div>
+              <button id="add-event" class="round-button" type="button" title="Add a Guild event" aria-label="Add a Guild event">+</button>
             </div>
             <div id="event-list" class="event-list" aria-live="polite"></div>
             <div class="panel-actions compact-actions">
@@ -99,7 +99,7 @@
               <span id="task-count" class="panel-badge">0 OPEN</span>
             </div>
             <form id="task-form" class="task-form">
-              <label class="visually-hidden" for="task-input">Add an Academy task</label>
+              <label class="visually-hidden" for="task-input">Add a Guild task</label>
               <input id="task-input" maxlength="140" autocomplete="off" placeholder="Add the next useful action…">
               <label class="visually-hidden" for="task-category">Task category</label>
               <select id="task-category"><option>Admin</option><option>Body</option><option>Craft</option><option>Mind</option><option>Character</option><option>Fellowship</option><option>Media</option></select>
@@ -126,7 +126,7 @@
 
           <section class="creed-panel" aria-label="Preceptor's Creed">
             <span class="kicker">THE PRECEPTOR’S CREED</span>
-            <p>I forge skill. I build character. I raise Warlords.</p>
+            <p>I forge skill. I build character. I help others learn.</p>
           </section>
         </div>
 
@@ -137,7 +137,7 @@
               <button id="add-resource" class="round-button" type="button" title="Add a resource" aria-label="Add a resource">+</button>
             </div>
             <div id="resource-grid" class="resource-grid" aria-live="polite"></div>
-            <button id="discover-bookmarks" class="discovery-button" type="button"><span aria-hidden="true">✧</span><strong>DISCOVER ACADEMY BOOKMARKS</strong><small>Optional local scan; nothing leaves this device</small></button>
+            <button id="discover-bookmarks" class="discovery-button" type="button"><span aria-hidden="true">✧</span><strong>DISCOVER GUILD BOOKMARKS</strong><small>Optional local scan; nothing leaves this device</small></button>
           </section>
 
           <section class="hall-panel journal-panel" aria-labelledby="journal-heading">
@@ -160,7 +160,7 @@
       <form id="resource-form" method="dialog">
         <span class="dialog-mark" aria-hidden="true">✧</span><span class="kicker">RESOURCE HALL</span><h2 id="resource-dialog-title">Add a resource</h2>
         <input id="resource-id" type="hidden"><input id="resource-platform" type="hidden">
-        <label for="resource-name">Name</label><input id="resource-name" maxlength="48" required placeholder="Academy resource">
+        <label for="resource-name">Name</label><input id="resource-name" maxlength="48" required placeholder="Guild resource">
         <label for="resource-url">Web address</label><input id="resource-url" type="url" maxlength="500" required placeholder="https://example.com">
         <div class="field-pair"><label>Category<select id="resource-kind"><option>Resource</option><option>Training</option><option>Courses</option><option>Archive</option><option>Administration</option><option>Official</option><option>Calendar</option><option>Media</option><option>Social</option><option>Support</option></select></label><label>Emblem<select id="resource-glyph"><option value="book">Book</option><option value="sword">Sword</option><option value="scroll">Scroll</option><option value="tower">Hall</option><option value="shield">Shield</option><option value="compass">Compass</option><option value="scales">Scales</option><option value="calendar">Calendar</option><option value="banner">Banner</option><option value="people">Fellowship</option><option value="eye">Lens</option><option value="coin">Coin</option></select></label></div>
         <p id="resource-error" class="form-error" role="alert"></p>
@@ -170,8 +170,8 @@
 
     <dialog id="event-dialog" class="academy-dialog" aria-labelledby="event-dialog-title">
       <form id="event-form" method="dialog">
-        <span class="dialog-mark" aria-hidden="true">◈</span><span class="kicker">ACADEMY RHYTHM</span><h2 id="event-dialog-title">Add an event</h2>
-        <label for="event-title">Event</label><input id="event-title" maxlength="100" required placeholder="Academy workshop">
+        <span class="dialog-mark" aria-hidden="true">◈</span><span class="kicker">GUILD RHYTHM</span><h2 id="event-dialog-title">Add an event</h2>
+        <label for="event-title">Event</label><input id="event-title" maxlength="100" required placeholder="Guild workshop">
         <div class="field-pair"><label>Date<input id="event-date" type="date" required></label><label>Time<input id="event-time" type="time" required></label></div>
         <label for="event-location">Location</label><input id="event-location" maxlength="100" placeholder="Training Yard">
         <div class="dialog-actions"><span></span><button id="cancel-event" class="secondary-button" type="button">CANCEL</button><button class="primary-button" type="submit">ADD EVENT</button></div>
@@ -195,3 +195,4 @@
     <script type="module" src="scripts/newtab.js"></script>
   </body>
 </html>
+

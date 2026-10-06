@@ -51,14 +51,15 @@ async function exportBackup() {
 }
 
 async function importBackup(event) {
-  const [file] = event.target.files; event.target.value = ""; if (!file) return; if (file.size > 3_000_000) { elements.recordsStatus.textContent = "That file is too large to be an Academy backup."; return; }
-  try { const parsed = JSON.parse(await file.text()); const candidate = parsed?.format === "academy-command-hall-backup" ? parsed.state : parsed; const imported = normalizeState(candidate, { imported: true }); await chrome.storage.local.clear(); await chrome.storage.local.set(imported); state = imported; populate(); elements.recordsStatus.textContent = "Chronicle restored successfully."; showToast(elements.toast, "Academy records restored.", 2800); }
-  catch (error) { console.error(error); elements.recordsStatus.textContent = "This does not appear to be a valid Academy backup."; }
+  const [file] = event.target.files; event.target.value = ""; if (!file) return; if (file.size > 3_000_000) { elements.recordsStatus.textContent = "That file is too large to be a Guild backup."; return; }
+  try { const parsed = JSON.parse(await file.text()); const candidate = parsed?.format === "academy-command-hall-backup" ? parsed.state : parsed; const imported = normalizeState(candidate, { imported: true }); await chrome.storage.local.clear(); await chrome.storage.local.set(imported); state = imported; populate(); elements.recordsStatus.textContent = "Chronicle restored successfully."; showToast(elements.toast, "Guild records restored.", 2800); }
+  catch (error) { console.error(error); elements.recordsStatus.textContent = "This does not appear to be a valid Guild backup."; }
 }
 
 async function resetAll() {
-  if (!window.confirm("Reset all Academy resources, tasks, journal entries, calendar events, notes, focus state, and appearance settings? Export a backup first if you wish to preserve them.")) return;
-  const fresh = cloneDefaults({ onboarded: true }); await chrome.storage.local.clear(); await chrome.storage.local.set(fresh); state = fresh; populate(); elements.recordsStatus.textContent = "The Command Hall has returned to its initial state."; showToast(elements.toast, "Academy records reset.", 2800);
+  if (!window.confirm("Reset all Guild resources, tasks, journal entries, calendar events, notes, focus state, and appearance settings? Export a backup first if you wish to preserve them.")) return;
+  const fresh = cloneDefaults({ onboarded: true }); await chrome.storage.local.clear(); await chrome.storage.local.set(fresh); state = fresh; populate(); elements.recordsStatus.textContent = "The Command Hall has returned to its initial state."; showToast(elements.toast, "Guild records reset.", 2800);
 }
 
 init().catch((error) => { console.error(error); showToast(elements.toast, "Hall Settings could not open correctly. Reload to try again.", 5000); });
+

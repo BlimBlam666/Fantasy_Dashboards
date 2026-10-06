@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Academy of Mercenary Arts — Command Hall",
-  "short_name": "Academy Hall",
-  "description": "A private medieval command hall for Academy training, operations, resources, upcoming events, quests, focus, and after-action reviews.",
+  "name": "Obsidian Gate Guild of Mercenaries — Command Hall",
+  "short_name": "Guild Hall",
+  "description": "A private medieval command hall for Guild training, operations, resources, upcoming events, quests, focus, and after-action reviews.",
   "version": "1.0.0",
   "minimum_chrome_version": "116",
   "permissions": ["contextMenus", "sidePanel", "storage"],
@@ -18,7 +18,7 @@
   "commands": {
     "open-academy-hall": {
       "suggested_key": {"default": "Alt+Shift+A", "mac": "MacCtrl+Shift+A"},
-      "description": "Open the Academy Command Hall"
+      "description": "Open the Guild Command Hall"
     }
   },
   "icons": {
@@ -31,3 +31,4 @@
     "extension_pages": "script-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'"
   }
 }
+

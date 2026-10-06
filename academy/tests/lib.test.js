@@ -41,9 +41,9 @@ test("doctrine marks reset when the week changes", () => {
   assert.equal(doctrine.week, getWeekKey(date)); assert.deepEqual(doctrine.marks, { body: 0, craft: 0, mind: 0, character: 0, fellowship: 0 });
 });
 
-test("weekly Academy rhythm produces upcoming events", () => {
+test("weekly Guild rhythm produces upcoming events", () => {
   const state = cloneDefaults({ onboarded: true }); const events = upcomingEvents(state, new Date(2026, 7, 20, 8), 6);
-  assert.equal(events.length, 6); assert.ok(events.every((event, index) => index === 0 || event.startsAt >= events[index - 1].startsAt)); assert.ok(events.some((event) => event.title === "Academy Training"));
+  assert.equal(events.length, 6); assert.ok(events.every((event, index) => index === 0 || event.startsAt >= events[index - 1].startsAt)); assert.ok(events.some((event) => event.title === "Guild Training"));
 });
 
 test("iCalendar import parses single and weekly events", () => {
@@ -51,10 +51,11 @@ test("iCalendar import parses single and weekly events", () => {
   const events = parseIcs(ics, new Date(2026, 7, 20)); assert.ok(events.some((event) => event.title === "Weapon Arts Workshop")); assert.equal(events.filter((event) => event.title === "F200 Practice").length, 4);
 });
 
-test("Academy bookmarks are discovered and social placeholders are replaced", () => {
-  const discovered = resourcesFromBookmarks([{ title: "root", children: [{ title: "Academy YouTube", url: "https://youtube.com/@academy" }, { title: "Unrelated", url: "https://example.com" }] }]);
+test("Guild bookmarks are discovered and social placeholders are replaced", () => {
+  const discovered = resourcesFromBookmarks([{ title: "root", children: [{ title: "Guild YouTube", url: "https://youtube.com/@academy" }, { title: "Unrelated", url: "https://example.com" }] }]);
   assert.equal(discovered.length, 1); assert.equal(discovered[0].platform, "youtube");
   const merged = mergeDiscoveredResources(cloneDefaults().resources, discovered); const youtube = merged.find((item) => item.platform === "youtube"); assert.equal(youtube.url, "https://youtube.com/@academy");
 });
 
 test("default state clones are independent", () => { const first = cloneDefaults(); const second = cloneDefaults(); first.resources.pop(); assert.notEqual(first.resources.length, second.resources.length); });
+

@@ -1,14 +1,14 @@
-# Privacy Policy — Academy of Mercenary Arts Command Hall
+# Privacy Policy — Obsidian Gate Guild of Mercenaries Command Hall
 
 Effective date: August 20, 2026
 
-The Academy Command Hall does not collect, transmit, sell, share, or monetize personal information. It contains no advertising, analytics, tracking technology, account system, remote executable code, content scripts, or host permissions.
+The Guild Command Hall does not collect, transmit, sell, share, or monetize personal information. It contains no advertising, analytics, tracking technology, account system, remote executable code, content scripts, or host permissions.
 
 ## Data stored locally
 
 The extension stores the following in Chrome’s extension storage on the user’s device:
 
-- Operator identity, Academy rank, display, search, clock, rhythm, and sound preferences
+- Operator identity, Guild rank, display, search, clock, rhythm, and sound preferences
 - User-created and configured Resource Hall names and web addresses
 - Campaign Board task text, category, due date, priority, and completion state
 - Commander’s Intent text
@@ -23,7 +23,7 @@ This information is not transmitted to the developer or any third party.
 
 ## Optional bookmark information
 
-When the user explicitly invokes **Discover Academy Bookmarks**, the extension requests Chrome’s optional bookmark permission and scans bookmark titles and addresses locally for Academy-related terms. Matching roads selected by the built-in rules are added to editable local Resource Hall data. Bookmark access can be revoked in Hall Settings.
+When the user explicitly invokes **Discover Guild Bookmarks**, the extension requests Chrome’s optional bookmark permission and scans bookmark titles and addresses locally for Academy-related terms. Matching roads selected by the built-in rules are added to editable local Resource Hall data. Bookmark access can be revoked in Hall Settings.
 
 ## Calendar files
 
@@ -40,3 +40,4 @@ The user may explicitly export local extension state as a JSON file and later im
 ## Changes
 
 If this policy changes, the effective date and extension documentation will be updated. No future version will begin collecting or transmitting personal information without clear disclosure and Chrome’s required permissions.
+

@@ -10,7 +10,7 @@ async function configureSidePanel() {
 
 function createContextMenu() {
   chrome.contextMenus.removeAll(() => {
-    chrome.contextMenus.create({ id: MENU_ID, title: "Add page to Academy Resource Hall", contexts: ["page"] });
+    chrome.contextMenus.create({ id: MENU_ID, title: "Add page to Guild Resource Hall", contexts: ["page"] });
   });
 }
 
@@ -38,3 +38,4 @@ chrome.contextMenus.onClicked.addListener(async (info, tab) => {
 });
 
 configureSidePanel();
+

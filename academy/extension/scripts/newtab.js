@@ -110,7 +110,7 @@ function bindEvents() {
 
 async function openFieldLedger() {
   try { const currentWindow = await chrome.windows.getCurrent(); await chrome.sidePanel.open({ windowId: currentWindow.id }); }
-  catch { showToast(elements.toast_region, "Pin the Academy crest to open the Field Ledger."); }
+  catch { showToast(elements.toast_region, "Pin the Guild crest to open the Field Ledger."); }
 }
 
 function updateClock() {
@@ -131,7 +131,7 @@ function createEmbers() {
 function renderEvents() {
   elements.event_list.replaceChildren();
   const events = upcomingEvents(state);
-  if (!events.length) { const empty = document.createElement("p"); empty.className = "empty-state"; empty.textContent = "NO EVENTS RECORDED. SET THE ACADEMY RHYTHM."; elements.event_list.append(empty); return; }
+  if (!events.length) { const empty = document.createElement("p"); empty.className = "empty-state"; empty.textContent = "NO EVENTS RECORDED. SET THE GUILD RHYTHM."; elements.event_list.append(empty); return; }
   for (const event of events.slice(0, 5)) {
     const card = document.createElement("article"); card.className = "event-card";
     const date = new Date(event.startsAt);
@@ -237,8 +237,8 @@ function openEventDialog() {
 
 async function saveEvent(event) {
   event.preventDefault(); const startsAt = new Date(`${elements.event_date.value}T${elements.event_time.value}`).getTime();
-  const academyEvent = normalizeEvent({ id: makeId("event"), title: elements.event_title.value, startsAt, endsAt: null, location: elements.event_location.value, kind: "Academy", source: "manual" }); if (!academyEvent) return;
-  state.events = await updateCollection("events", (events) => [...events, academyEvent].slice(-500)); renderEvents(); elements.event_dialog.close(); showToast(elements.toast_region, "Event entered in the Academy rhythm.");
+  const academyEvent = normalizeEvent({ id: makeId("event"), title: elements.event_title.value, startsAt, endsAt: null, location: elements.event_location.value, kind: "Guild", source: "manual" }); if (!academyEvent) return;
+  state.events = await updateCollection("events", (events) => [...events, academyEvent].slice(-500)); renderEvents(); elements.event_dialog.close(); showToast(elements.toast_region, "Event entered in the Guild rhythm.");
 }
 
 async function importCalendar(event) {
@@ -287,3 +287,4 @@ function playChime() { warmAudio(); if (!audioContext) return; const now = audio
 function flashSaved(element) { element.textContent = "INSCRIBED"; window.setTimeout(() => { element.textContent = ""; }, 1000); }
 
 init().catch((error) => { console.error(error); showToast(elements.toast_region, "The Command Hall could not open correctly. Reload to try again.", 5000); });
+
