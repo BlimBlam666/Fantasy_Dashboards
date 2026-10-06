@@ -52,7 +52,7 @@ export const SIGNALS = Object.freeze([
   "Train what you intend to trust under pressure.",
   "The standard is clear, safe, useful, and repeatable.",
   "Develop the fighter; the victory will follow.",
-  "A Warlord is built through ordinary practice done with uncommon care.",
+  "Skill grows through ordinary practice done with uncommon care.",
   "Measure first. Choose well. Act without waste.",
   "Skill grows fastest where reflection follows effort.",
   "Teach the reason, demonstrate the action, test the result.",
@@ -84,7 +84,7 @@ export const SIGNALS = Object.freeze([
   "The Guild is the gate. Amtgard is the world beyond it.",
   "Choose one mission for this session and finish it well.",
   "Practice reveals character; fellowship gives it purpose.",
-  "Forge skill. Build character. Raise Warlords."
+  "Forge skill. Build character. Learn together."
 ]);
 
 const SEARCH_ENGINES = Object.freeze({
